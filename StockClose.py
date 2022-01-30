@@ -15,7 +15,7 @@ from keras.layers import Dense, LSTM, Dropout
 #     plt.legend()
 #     plt.show()
 
-dataset = pd.read_csv('daily_VANKE.csv')
+dataset = pd.read_csv('daily_DAIDEX.csv')
 dataset = dataset[['close']]
 sc = MinMaxScaler(feature_range=(0,1))
 training_set_scaled = sc.fit_transform(dataset)
@@ -24,12 +24,12 @@ print(dataset)
 
 X_train = []
 y_train = []
-for i in range(60,3900):
-    X_train.append(training_set_scaled[i-60:i])
-    y_train.append(training_set_scaled[i+1])
+for i in range(0,4140):
+    X_train.append(training_set_scaled[i+1:i+61])
+    y_train.append(training_set_scaled[i])
 X_train, y_train = np.array(X_train), np.array(y_train)
 
-X_train = X_train.reshape(3840, 60, 1)
+X_train = X_train.reshape(4140, 60, 1)
 print(X_train, X_train.shape)
 
 regressor = Sequential()
@@ -56,11 +56,11 @@ regressor.compile(optimizer='rmsprop',loss='mean_squared_error')
 # Fitting to the training set
 regressor.fit(X_train,y_train,epochs=35,batch_size=32)
 
-regressor.save("vankestock.h5")
+regressor.save("daidexstockrev.h5")
 
 # regress = load_model("reliancestock.h5")
 
-dataset = pd.read_csv('daily_VANKE.csv')
+dataset = pd.read_csv('daily_DAIDEX.csv')
 dataset = dataset[['close']]
 sc = MinMaxScaler(feature_range=(0,1))
 testing_set_scaled = sc.fit_transform(dataset)
@@ -68,8 +68,8 @@ X_test = []
 y_test = []
 
 i=100
-X_test.append(testing_set_scaled[i-60:i])
-y_test.append(testing_set_scaled[i+1])
+X_test.append(testing_set_scaled[i+1:i+61])
+y_test.append(testing_set_scaled[i])
 
 X_test, y_test = np.array(X_test), np.array(y_test)
 X_test = X_test.reshape(1, 60, 1)
