@@ -1,5 +1,5 @@
 # TRINIT_OMR_ML04
-Submission from Team OMR for the TRI-NIT Hackathon  
+Submission from **Team OMR** for the TRI-NIT Hackathon  
 ## Problem Statement:  
 ### ML04  
 Forecasting stock market prices have always been a challenging task
@@ -10,7 +10,7 @@ rate of his investment and his business opportunities in IBM's
 Stockmarket can increase if an efficient algorithm could be
 devised to predict the short term price of an individual stock.  
   
-## Objectives:  
+### Objectives:  
 The link below contains a dataset, where the
 TIME_SERIES_DAILY_ADJUSTED give the stock
 market's close value of every day with a date. Your task
