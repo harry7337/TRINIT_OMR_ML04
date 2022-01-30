@@ -30,3 +30,7 @@ Our method involves using a Recurrent Neural Network(RNN), in particular it uses
 1. Python <br>
 2. StreamLit <br>
 
+## Members:
+1. Kaustubh Khedkar
+2. Harish Gumnur
+3. Poorna Hegde
