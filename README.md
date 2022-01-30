@@ -22,3 +22,11 @@ right amount of money
 
 Link to dataset: https://www.alphavantage.co/documentation/  
 Link to getting an API key: https://www.alphavantage.co/support/#api-key  
+
+## Model
+Our method involves using a Recurrent Neural Network(RNN), in particular it uses LSTMs(Long Short Term Memory). 
+
+## Tools/Languages Used:
+1. Python <br>
+2. StreamLit <br>
+
